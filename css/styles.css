@@ -60,6 +60,10 @@ header {
   text-decoration: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   top: -150%;
@@ -120,11 +124,27 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
 .header-link:focus {
   color: var(--pressed-state);
+}
+
+.current {
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 68px;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--pressed-state);
 }
 
 .address {
@@ -142,6 +162,7 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-link:hover,
@@ -202,6 +223,7 @@ header {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-brand);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover,
@@ -258,6 +280,7 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: 1px solid var(--primary-brand);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -409,6 +432,7 @@ header {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--primary-brand);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover,
@@ -452,9 +476,11 @@ header {
   justify-content: center;
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
   fill: var(--subtle-text);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -489,6 +515,7 @@ header {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--primary-brand);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-btn:hover,
@@ -508,6 +535,10 @@ header {
   margin-bottom: 72px;
 }
 
+/* .portfolio-item {
+  position: relative;
+} */
+
 .portfolio-title {
   font-weight: 500;
   font-size: 20px;
@@ -525,6 +556,7 @@ header {
 
 .portfolio-link {
   display: block;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
@@ -533,11 +565,35 @@ header {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.portfolio-link:hover .portfolio-cover-text,
+.portfolio-link:focus .portfolio-cover-text {
+  transform: translateY(0);
+}
+
 .portfolio-border {
   border-width: 0 1px 1px 1px;
   border-style: solid;
   border-color: var(--accent);
   padding: 32px 0 32px 16px;
+}
+
+.portfolio-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-cover-text {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light);
+  background-color: var(--primary-brand);
+  padding: 32px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-title {
@@ -549,4 +605,69 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text);
+}
+
+/** ------- MODAL------- **/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  padding: 24px;
+  width: 408px;
+  min-height: 576px;
+  border-radius: 4px;
+  background-color: var(--modal-background);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-close-btn {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--accent);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--pressed-state);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.modal-close-icon {
+  fill: var(--dark);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover > .modal-close-icon,
+.modal-close-btn:focus > .modal-close-icon {
+  fill: var(--white-background);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
