@@ -124,7 +124,7 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -134,6 +134,7 @@ header {
 
 .current {
   position: relative;
+  color: var(--pressed-state);
 }
 
 .current::after {
@@ -162,7 +163,7 @@ header {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-link:hover,
@@ -223,7 +224,7 @@ header {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-brand);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover,
@@ -280,15 +281,14 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: 1px solid var(--primary-brand);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background: var(--pressed-state);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: 1px solid var(--pressed-state);
+  background-color: var(--pressed-state);
+  border-color: var(--pressed-state);
 }
 
 /** ------- ADVANTAGES------- **/
@@ -432,7 +432,7 @@ header {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--primary-brand);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover,
@@ -476,11 +476,11 @@ header {
   justify-content: center;
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
   fill: var(--subtle-text);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -515,15 +515,17 @@ header {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--primary-brand);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-btn:hover,
 .main-btn:focus {
-  background: var(--pressed-state);
+  background-color: var(--pressed-state);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
   color: var(--white-background);
   border-color: var(--pressed-state);
 }
@@ -534,10 +536,6 @@ header {
   justify-content: center;
   margin-bottom: 72px;
 }
-
-/* .portfolio-item {
-  position: relative;
-} */
 
 .portfolio-title {
   font-weight: 500;
@@ -556,7 +554,7 @@ header {
 
 .portfolio-link {
   display: block;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
@@ -647,7 +645,8 @@ header {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: var(--accent);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
@@ -658,7 +657,7 @@ header {
 
 .modal-close-icon {
   fill: var(--dark);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover > .modal-close-icon,
